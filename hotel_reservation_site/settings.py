@@ -16,7 +16,7 @@ SECRET_KEY = config('SECRET_KEY', cast=str, default="x_k4rgpyh95z#6pz6d9waw@69#c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool, default=False)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=str, default='localhost,127.0.0.1,.onrender.com,.railway.app').split(',')
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=str, default='localhost,127.0.0.1,.onrender.com,.railway.app,booknest-jhw4.onrender.com').split(',')
 
 
 # Application definition
@@ -158,6 +158,7 @@ CORS_ORIGIN_WHITELIST = [
     'http://192.168.0.109:3000',
     'http://127.0.0.1:3000',
     'http://127.0.0.1:8002',
+    'https://booknest-jhw4.onrender.com',
 ]
 
 # Allow all origins during development
@@ -170,10 +171,18 @@ if not CORS_ALLOW_ALL_ORIGINS:
         'http://localhost:8000',
         'http://127.0.0.1:3000',
         'http://127.0.0.1:8000',
+        'https://booknest-jhw4.onrender.com',
         # Add your production domains here:
         # 'https://yourhotel.com',
         # 'https://www.yourhotel.com',
     ]
+
+# CSRF trusted origins for production
+CSRF_TRUSTED_ORIGINS = [
+    'https://booknest-jhw4.onrender.com',
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+]
 
 # Token Configuration For JWT Authentication
 SIMPLE_JWT = {
@@ -255,5 +264,5 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', cast=str, default='')
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', cast=str, default='BookNest <nestbook.mail@gmail.com>')
 
 # Frontend URL for password reset links
-FRONTEND_URL = config('FRONTEND_URL', cast=str, default='http://localhost:3000')
+FRONTEND_URL = config('FRONTEND_URL', cast=str, default='https://booknest-jhw4.onrender.com')
 
