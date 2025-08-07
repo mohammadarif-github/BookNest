@@ -48,7 +48,7 @@ const ResetPasswordPage = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/accounts/password-reset/confirm/', {
+      const response = await axios.post('https://booknest-jhw4.onrender.com/accounts/password-reset/confirm/', {
         uid: uid,
         token: token,
         new_password: formData.new_password,

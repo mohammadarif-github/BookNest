@@ -29,7 +29,7 @@ const StaffDashboard = () => {
       };
 
       const response = await axios.get(
-        'http://localhost:8000/hotel/management/dashboard/',
+        'https://booknest-jhw4.onrender.com/hotel/management/dashboard/',
         config
       );
 
@@ -55,7 +55,7 @@ const StaffDashboard = () => {
       };
 
       const response = await axios.get(
-        'http://localhost:8000/hotel/management/bookings/',
+        'https://booknest-jhw4.onrender.com/hotel/management/bookings/',
         config
       );
 
@@ -76,7 +76,7 @@ const StaffDashboard = () => {
       };
 
       const response = await axios.get(
-        'http://localhost:8000/hotel/get_room_list/',
+        'https://booknest-jhw4.onrender.com/hotel/get_room_list/',
         config
       );
 

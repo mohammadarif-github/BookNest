@@ -81,7 +81,7 @@ export default function BookingComponent({ room }) {
     };
     
     axios
-      .post("http://localhost:8000/hotel/book/", bookingData, config)
+      .post("https://booknest-jhw4.onrender.com/hotel/book/", bookingData, config)
       .then((response) => {
         setData({
           email: "",

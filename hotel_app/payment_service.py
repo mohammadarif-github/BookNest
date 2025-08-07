@@ -29,10 +29,10 @@ class SSLCommerzService:
         self.base_url = "https://sandbox.sslcommerz.com"
         
         # URLs for callbacks (will be updated for production)
-        self.success_url = "http://localhost:8000/hotel/payment/success/"
-        self.fail_url = "http://localhost:8000/hotel/payment/fail/"
-        self.cancel_url = "http://localhost:8000/hotel/payment/cancel/"
-        self.ipn_url = "http://localhost:8000/hotel/payment/ipn/"
+        self.success_url = "https://booknest-jhw4.onrender.com/hotel/payment/success/"
+        self.fail_url = "https://booknest-jhw4.onrender.com/hotel/payment/fail/"
+        self.cancel_url = "https://booknest-jhw4.onrender.com/hotel/payment/cancel/"
+        self.ipn_url = "https://booknest-jhw4.onrender.com/hotel/payment/ipn/"
         
     def generate_transaction_id(self, booking_id):
         """Generate unique transaction ID for booking"""

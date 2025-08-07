@@ -24,7 +24,7 @@ const ForgotPasswordPage = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/accounts/password-reset/', {
+      const response = await axios.post('https://booknest-jhw4.onrender.com/accounts/password-reset/', {
         email: email
       });
 
@@ -65,7 +65,7 @@ const ForgotPasswordPage = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/accounts/password-reset/with-email-update/', {
+      const response = await axios.post('https://booknest-jhw4.onrender.com/accounts/password-reset/with-email-update/', {
         username: username,
         email: email
       });

@@ -186,9 +186,6 @@ if not CORS_ALLOW_ALL_ORIGINS:
         'http://127.0.0.1:8000',
         'https://booknest-jhw4.onrender.com',
         'https://book-nest-55ku.onrender.com',
-        # Add your production domains here:
-        # 'https://yourhotel.com',
-        # 'https://www.yourhotel.com',
     ]
 
 # Allow credentials for authentication

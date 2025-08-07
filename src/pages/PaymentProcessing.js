@@ -47,7 +47,7 @@ const PaymentProcessing = () => {
 
       console.log(`Fetching booking details for ID: ${bookingId}`);
       const response = await axios.get(
-        `http://localhost:8000/hotel/booking-detail/${bookingId}/`,
+        `https://booknest-jhw4.onrender.com/hotel/booking-detail/${bookingId}/`,
         config
       );
 
@@ -133,7 +133,7 @@ const PaymentProcessing = () => {
       };
 
       const response = await axios.post(
-        'http://localhost:8000/hotel/payment/initiate/',
+        'https://booknest-jhw4.onrender.com/hotel/payment/initiate/',
         paymentData,
         config
       );

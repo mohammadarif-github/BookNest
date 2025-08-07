@@ -69,7 +69,7 @@ const ProfilePage = () => {
           Authorization: `Bearer ${token}`,
         },
       };
-      const response = await axios.get('http://localhost:8000/accounts/profile/', config);
+      const response = await axios.get('https://booknest-jhw4.onrender.com/accounts/profile/', config);
       if (response.data.success) {
         setProfileData(response.data.data);
       }
@@ -86,7 +86,7 @@ const ProfilePage = () => {
           Authorization: `Bearer ${token}`,
         },
       };
-      const response = await axios.get('http://localhost:8000/hotel/user-bookings/', config);
+      const response = await axios.get('https://booknest-jhw4.onrender.com/hotel/user-bookings/', config);
       
       // Handle the structured API response
       if (response.data.success) {
@@ -116,7 +116,7 @@ const ProfilePage = () => {
         },
       };
       
-      const response = await axios.put('http://localhost:8000/accounts/profile/', profileData, config);
+      const response = await axios.put('https://booknest-jhw4.onrender.com/accounts/profile/', profileData, config);
       
       if (response.data.success) {
         setUpdateMessage('Profile updated successfully!');

@@ -68,7 +68,7 @@ const PaymentButton = ({ booking, onPaymentInitiated }) => {
       };
 
       const response = await axios.post(
-        'http://localhost:8000/hotel/payment/initiate/',
+        'https://booknest-jhw4.onrender.com/hotel/payment/initiate/',
         paymentData,
         config
       );
