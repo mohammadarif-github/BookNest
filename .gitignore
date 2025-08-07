@@ -326,4 +326,5 @@ Procfile
 # Package management (keep only necessary ones)
 package.json
 package-lock.json
-yarn.lock
+yarn.locksetup_production_db.py
+other_sensitive_file.py
