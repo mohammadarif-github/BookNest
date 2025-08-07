@@ -312,6 +312,9 @@ send_*.py
 *_test.html
 frontend_*.html
 
+# Sample CSV files (development examples)
+sample_csv_files/
+
 # ========================================
 # Deployment and Build Files
 # ========================================

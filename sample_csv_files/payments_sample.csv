@@ -1,6 +1,0 @@
-booking_id,customer_username,amount,currency,status,payment_method,transaction_id
-1,admin,299.99,BDT,paid,visa,TXN_001_2025_08_07
-2,john_doe,450.00,BDT,pending,bkash,TXN_002_2025_08_07
-3,jane_smith,750.50,BDT,paid,master,TXN_003_2025_08_07
-4,bob_wilson,199.99,BDT,failed,nagad,TXN_004_2025_08_07
-5,alice_brown,899.00,BDT,paid,visa,TXN_005_2025_08_07
