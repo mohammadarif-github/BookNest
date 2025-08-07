@@ -16,8 +16,13 @@ python manage.py shell -c "
 from django.contrib.auth import get_user_model
 User = get_user_model()
 if not User.objects.filter(username='admin').exists():
-    User.objects.create_superuser('admin', 'admin@booknest.com', 'booknest2024')
-    print('Superuser created: admin/booknest2024')
+    User.objects.create_superuser('admin', 'admin@booknest.com', 'password123')
+    print('Superuser created: admin/password123')
 else:
     print('Superuser already exists')
+    # Update existing admin password to password123
+    admin_user = User.objects.get(username='admin')
+    admin_user.set_password('password123')
+    admin_user.save()
+    print('Admin password updated to: password123')
 "
