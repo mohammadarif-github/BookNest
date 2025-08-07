@@ -1,0 +1,11 @@
+username,email,first_name,last_name,password,is_staff,is_active,phone_number,address,date_of_birth
+testuser1,testuser1@example.com,John,Doe,password123,False,True,+8801234567801,Dhaka Bangladesh,1990-01-15
+testuser2,testuser2@example.com,Jane,Smith,password123,False,True,+8801234567802,Chittagong Bangladesh,1985-05-22
+testuser3,testuser3@example.com,Mike,Wilson,password123,False,True,+8801234567803,Sylhet Bangladesh,1992-03-10
+testuser4,testuser4@example.com,Sarah,Brown,password123,False,True,+8801234567804,Khulna Bangladesh,1988-07-18
+testuser5,testuser5@example.com,David,Davis,password123,False,True,+8801234567805,Rajshahi Bangladesh,1995-11-30
+manager1,manager1@booknest.com,Alex,Johnson,password123,True,True,+8801234567806,Dhaka Bangladesh,1982-09-12
+manager2,manager2@booknest.com,Emma,Taylor,password123,True,True,+8801234567807,Dhaka Bangladesh,1987-02-28
+staff1,staff1@booknest.com,Chris,Anderson,password123,False,True,+8801234567808,Dhaka Bangladesh,1993-06-05
+staff2,staff2@booknest.com,Lisa,Martinez,password123,False,True,+8801234567809,Dhaka Bangladesh,1991-12-20
+guest1,guest1@example.com,Tom,Garcia,password123,False,True,+8801234567810,Barisal Bangladesh,1989-04-14

@@ -1,0 +1,11 @@
+room_name,room_slug,category_name,room_number,price,featured,ac_non_ac,room_description,room_cover_image_url
+Deluxe Ocean Suite,deluxe-ocean-suite,Deluxe,101,299.99,True,A,Luxurious ocean-view suite with premium amenities,https://example.com/images/deluxe-ocean.jpg
+Standard City Room,standard-city-room,Standard,102,149.99,False,NA,Comfortable city view room with essential amenities,https://example.com/images/standard-city.jpg
+Presidential Suite,presidential-suite,Presidential,201,999.99,True,A,Top-tier luxury suite with exclusive services,https://example.com/images/presidential.jpg
+Economy Budget Room,economy-budget-room,Economy,103,89.99,False,NA,Basic accommodation with necessary facilities,https://example.com/images/economy.jpg
+Family Garden Room,family-garden-room,Family,104,249.99,True,A,Spacious family room overlooking gardens,https://example.com/images/family-garden.jpg
+Executive Business Suite,executive-business-suite,Executive,202,449.99,True,A,Business-class suite with work facilities,https://example.com/images/executive.jpg
+Luxury Penthouse,luxury-penthouse,Luxury,301,1299.99,True,A,Ultimate luxury accommodation with panoramic views,https://example.com/images/luxury-penthouse.jpg
+Standard Twin Room,standard-twin-room,Standard,105,179.99,False,A,Twin bed room for business travelers,https://example.com/images/standard-twin.jpg
+Garden View Deluxe,garden-view-deluxe,Deluxe,106,329.99,True,A,Premium room with beautiful garden views,https://example.com/images/garden-deluxe.jpg
+Ocean Premium Suite,ocean-premium-suite,Suite,203,649.99,True,A,Premium suite with direct ocean access,https://example.com/images/ocean-premium.jpg

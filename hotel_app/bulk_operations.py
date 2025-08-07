@@ -645,8 +645,7 @@ class BulkDataUploadView(APIView):
     def _process_payments_csv(self, csv_data):
         """
         Process CSV for payments
-        Expected columns: customer_username (only field that exists in current DB structure)
-        Note: Current Payment table only has id and customer_id columns
+        Expected columns: booking_id, customer_username, amount, currency, status, payment_method, transaction_id
         """
         created_payments = []
         errors = []
@@ -654,42 +653,75 @@ class BulkDataUploadView(APIView):
         with transaction.atomic():
             for row_num, row in enumerate(csv_data, start=2):
                 try:
+                    # Required fields
+                    booking_id = row.get('booking_id', '').strip()
                     customer_username = row.get('customer_username', '').strip()
+                    amount = row.get('amount', '').strip()
+                    transaction_id = row.get('transaction_id', '').strip()
                     
-                    if not customer_username:
-                        errors.append(f'Row {row_num}: customer_username is required')
+                    # Optional fields with defaults
+                    currency = row.get('currency', 'BDT').strip()
+                    status = row.get('status', 'pending').strip()
+                    payment_method = row.get('payment_method', '').strip() or None
+                    
+                    if not all([booking_id, customer_username, amount, transaction_id]):
+                        errors.append(f'Row {row_num}: booking_id, customer_username, amount, and transaction_id are required')
                         continue
                     
                     try:
                         # Find customer by username
                         user = User.objects.get(username=customer_username)
-                        customer = Customer.objects.get(customer=user)
                     except User.DoesNotExist:
                         errors.append(f'Row {row_num}: User "{customer_username}" does not exist')
                         continue
-                    except Customer.DoesNotExist:
-                        errors.append(f'Row {row_num}: Customer record for "{customer_username}" does not exist')
+                    
+                    try:
+                        # Find booking by ID
+                        booking = Booking.objects.get(id=booking_id)
+                    except Booking.DoesNotExist:
+                        errors.append(f'Row {row_num}: Booking with ID "{booking_id}" does not exist')
                         continue
                     
-                    # Create payment with only available fields (id and customer_id)
+                    # Validate amount
+                    try:
+                        amount_decimal = float(amount)
+                    except ValueError:
+                        errors.append(f'Row {row_num}: Invalid amount "{amount}"')
+                        continue
+                    
+                    # Check if payment already exists for this booking
+                    if Payment.objects.filter(booking=booking).exists():
+                        errors.append(f'Row {row_num}: Payment already exists for booking ID "{booking_id}"')
+                        continue
+                    
+                    # Create payment with new schema
                     payment = Payment.objects.create(
-                        customer=customer
+                        booking=booking,
+                        customer=user,
+                        amount=amount_decimal,
+                        currency=currency,
+                        status=status,
+                        payment_method=payment_method,
+                        transaction_id=transaction_id
                     )
                     
                     created_payments.append({
                         'id': payment.id,
+                        'booking_id': booking_id,
                         'customer': customer_username,
-                        'note': 'Limited payment record created with current DB structure'
+                        'amount': amount_decimal,
+                        'currency': currency,
+                        'status': status,
+                        'transaction_id': transaction_id
                     })
                     
                 except Exception as e:
                     errors.append(f'Row {row_num}: {str(e)}')
         
         return Response({
-            'message': f'Processed {len(created_payments)} payments successfully (limited by current DB structure)',
+            'message': f'Processed {len(created_payments)} payments successfully',
             'created_payments': created_payments,
-            'errors': errors,
-            'warning': 'Current Payment table only supports id and customer_id fields'
+            'errors': errors
         }, status=status.HTTP_201_CREATED)
 
     def _process_checkins_csv(self, csv_data):

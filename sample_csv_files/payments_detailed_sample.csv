@@ -1,0 +1,11 @@
+booking_id,customer_username,amount,currency,status,payment_method,transaction_id,payment_notes
+1,admin,299.99,BDT,paid,visa,PAY_001_20250807_001,Room booking payment for Deluxe Suite
+2,john_doe,450.00,BDT,pending,bkash,PAY_002_20250807_002,Ocean View Room advance payment
+3,jane_smith,750.50,BDT,paid,master,PAY_003_20250807_003,Presidential Suite full payment
+4,bob_wilson,199.99,BDT,failed,nagad,PAY_004_20250807_004,Standard Room payment failed - retry needed
+5,alice_brown,899.00,BDT,refunded,visa,PAY_005_20250807_005,Garden View Room payment refunded
+6,charlie_davis,325.00,BDT,processing,rocket,PAY_006_20250807_006,Executive Suite payment in progress
+7,testuser,175.99,BDT,paid,upay,PAY_007_20250807_007,Economy Room weekend booking
+8,manager_user,1250.00,BDT,paid,bank,PAY_008_20250807_008,Luxury Suite corporate booking
+9,staff_user,399.99,BDT,pending,nexus,PAY_009_20250807_009,Family Room staff discount booking
+10,guest_user_1,275.50,BDT,cancelled,other,PAY_010_20250807_010,Standard Twin Room cancelled booking
