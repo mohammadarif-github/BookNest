@@ -4,6 +4,21 @@ A full-stack hotel reservation system built with Django REST Framework backend a
 
 **Developed by:** [@mohammadarif-github](https://github.com/mohammadarif-github)
 
+---
+
+## ✅ Deployment Status
+
+The project has been successfully deployed on **Render**.
+
+### 🌐 Live Demo
+
+- 🔗 **Frontend (React)**: https://book-nest-55ku.onrender.com  
+- 🖥️ **Backend (Django REST API)**: https://booknest-jhw4.onrender.com
+
+You can now access the full application online, including the hotel booking features, admin dashboard, and API documentation.
+
+---
+
 ## 📋 Table of Contents
 
 - [Features](#-features)

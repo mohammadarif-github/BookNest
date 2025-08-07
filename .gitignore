@@ -269,8 +269,8 @@ $RECYCLE.BIN/
 # ========================================
 
 # Media files (user uploads)
-media/
-!media/default/
+# media/
+# !media/default/
 
 # Static files (collected)
 static/
