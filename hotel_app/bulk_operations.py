@@ -661,7 +661,7 @@ class BulkDataUploadView(APIView):
                     
                     # Optional fields with defaults
                     currency = row.get('currency', 'BDT').strip()
-                    status = row.get('status', 'pending').strip()
+                    status_value = row.get('status', 'pending').strip()
                     payment_method = row.get('payment_method', '').strip() or None
                     
                     if not all([booking_id, customer_username, amount, transaction_id]):
@@ -700,7 +700,7 @@ class BulkDataUploadView(APIView):
                         customer=user,
                         amount=amount_decimal,
                         currency=currency,
-                        status=status,
+                        status=status_value,  # Changed variable name to avoid conflict
                         payment_method=payment_method,
                         transaction_id=transaction_id
                     )
@@ -711,7 +711,7 @@ class BulkDataUploadView(APIView):
                         'customer': customer_username,
                         'amount': amount_decimal,
                         'currency': currency,
-                        'status': status,
+                        'status': status_value,
                         'transaction_id': transaction_id
                     })
                     
@@ -722,7 +722,7 @@ class BulkDataUploadView(APIView):
             'message': f'Processed {len(created_payments)} payments successfully',
             'created_payments': created_payments,
             'errors': errors
-        }, status=status.HTTP_201_CREATED)
+        }, status=status.HTTP_201_CREATED)  # Changed from HTTP_200_CREATED to HTTP_201_CREATED
 
     def _process_checkins_csv(self, csv_data):
         """

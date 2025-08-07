@@ -3,6 +3,7 @@ from decouple import config
 from datetime import timedelta
 import dj_database_url
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -86,14 +87,21 @@ WSGI_APPLICATION = 'hotel_reservation_site.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 # Use PostgreSQL if DATABASE_URL is provided (production), otherwise SQLite (development)
-if 'DATABASE_URL' in os.environ:
+
+SECRET_KEY = config('SECRET_KEY')
+
+# Database configuration
+DATABASE_URL = config('DATABASE_URL', default='')
+
+if DATABASE_URL:
     DATABASES = {
         'default': dj_database_url.parse(
-            os.environ.get('DATABASE_URL'),
+            DATABASE_URL,
             conn_max_age=600,
             conn_health_checks=True,
         )
     }
+    print("Using PostgreSQL from environment")
 else:
     DATABASES = {
         'default': {
@@ -101,6 +109,7 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
+    print("Using SQLite")
 
 
 # Password validation

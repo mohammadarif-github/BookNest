@@ -327,6 +327,3 @@ Procfile
 package.json
 package-lock.json
 yarn.lock
-
-setup_production_db.py
-update_all_passwords.py
