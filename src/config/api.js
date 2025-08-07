@@ -1,6 +1,12 @@
 // API Configuration for BookNest Hotel Management System
 // Centralized API URL management
 
+import axios from 'axios';
+
+// Configure axios defaults
+axios.defaults.withCredentials = true;
+axios.defaults.headers.common['Content-Type'] = 'application/json';
+
 const getAPIBaseURL = () => {
   // You can set REACT_APP_API_BASE_URL in your .env file or deployment environment
   return process.env.REACT_APP_API_BASE_URL || 'http://localhost:8000';

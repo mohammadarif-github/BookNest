@@ -3,6 +3,9 @@ import axios from "axios";
 import { buildURL, endpoints } from "./config/api";
 import { Navigate } from "react-router-dom";
 
+// Configure axios defaults for CORS
+axios.defaults.withCredentials = true;
+
 // Security utilities
 const isTokenExpired = (token) => {
   if (!token) return true;
@@ -155,6 +158,7 @@ class Context extends Component {
         headers: {
           Authorization: `Bearer ${token}`,
         },
+        withCredentials: true,
       };
       
       const response = await axios.get(buildURL(endpoints.PROFILE), axiosConfig);
@@ -402,6 +406,7 @@ class Context extends Component {
       headers: {
         Authorization: `Bearer ${this.state.token}`,
       },
+      withCredentials: true,
     };
     if (this.state.isAdmin) {
       axios
@@ -430,6 +435,7 @@ class Context extends Component {
         "Content-Type": "application/json",
         Authorization: `Bearer ${this.state.token}`,
       },
+      withCredentials: true,
     };
     axios
       .post(buildURL(endpoints.CHECKOUT), { pk: room_id }, axiosConfig)

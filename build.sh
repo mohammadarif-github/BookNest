@@ -5,11 +5,7 @@ set -o errexit
 # Install Python dependencies
 pip install -r requirements.txt
 
-# Install Node.js dependencies and build React app
-npm install
-npm run build
-
-# Collect static files
+# Collect static files for Django admin and DRF
 python manage.py collectstatic --noinput
 
 # Run database migrations

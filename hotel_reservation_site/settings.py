@@ -16,7 +16,7 @@ SECRET_KEY = config('SECRET_KEY', cast=str, default="x_k4rgpyh95z#6pz6d9waw@69#c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool, default=False)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=str, default='localhost,127.0.0.1,.onrender.com,.railway.app,booknest-jhw4.onrender.com').split(',')
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=str, default='localhost,127.0.0.1,.onrender.com,.railway.app,booknest-jhw4.onrender.com,book-nest-55ku.onrender.com').split(',')
 
 
 # Application definition
@@ -159,10 +159,14 @@ CORS_ORIGIN_WHITELIST = [
     'http://127.0.0.1:3000',
     'http://127.0.0.1:8002',
     'https://booknest-jhw4.onrender.com',
+    'https://book-nest-55ku.onrender.com',
 ]
 
 # Allow all origins during development
 CORS_ALLOW_ALL_ORIGINS = config('CORS_ALLOW_ALL_ORIGINS', cast=bool, default=False)
+
+# CORS settings
+CORS_ALLOW_ALL_ORIGINS = DEBUG  # Only allow all origins in development
 
 # Production CORS settings
 if not CORS_ALLOW_ALL_ORIGINS:
@@ -172,14 +176,40 @@ if not CORS_ALLOW_ALL_ORIGINS:
         'http://127.0.0.1:3000',
         'http://127.0.0.1:8000',
         'https://booknest-jhw4.onrender.com',
+        'https://book-nest-55ku.onrender.com',
         # Add your production domains here:
         # 'https://yourhotel.com',
         # 'https://www.yourhotel.com',
     ]
 
+# Allow credentials for authentication
+CORS_ALLOW_CREDENTIALS = True
+
+# Allow specific headers
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
+
 # CSRF trusted origins for production
 CSRF_TRUSTED_ORIGINS = [
     'https://booknest-jhw4.onrender.com',
+    'https://book-nest-55ku.onrender.com',
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+]
+
+# CSRF trusted origins for production
+CSRF_TRUSTED_ORIGINS = [
+    'https://booknest-jhw4.onrender.com',
+    'https://book-nest-55ku.onrender.com',
     'http://localhost:3000',
     'http://127.0.0.1:3000',
 ]
