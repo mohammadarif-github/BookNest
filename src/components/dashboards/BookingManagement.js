@@ -29,7 +29,7 @@ const BookingManagement = ({ onDataUpdate }) => {
       };
 
       const response = await axios.get(
-        'http://localhost:8000/hotel/management/bookings/',
+        'https://booknest-jhw4.onrender.com/hotel/management/bookings/',
         config
       );
 
@@ -61,7 +61,7 @@ const BookingManagement = ({ onDataUpdate }) => {
       };
 
       const response = await axios.patch(
-        'http://localhost:8000/hotel/management/bookings/',
+        'https://booknest-jhw4.onrender.com/hotel/management/bookings/',
         {
           booking_id: bookingId,
           action: action

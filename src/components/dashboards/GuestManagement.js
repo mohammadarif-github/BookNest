@@ -29,7 +29,7 @@ const GuestManagement = () => {
       };
 
       const response = await axios.get(
-        'http://localhost:8000/hotel/management/guests/',
+        'https://booknest-jhw4.onrender.com/hotel/management/guests/',
         config
       );
 

@@ -49,7 +49,7 @@ const PaymentManagement = ({ onDataUpdate }) => {
         params: filters
       };
 
-      const response = await axios.get('http://localhost:8000/hotel/management/payments/', config);
+      const response = await axios.get('https://booknest-jhw4.onrender.com/hotel/management/payments/', config);
 
       if (response.data.success) {
         setPayments(response.data.data);
@@ -143,7 +143,7 @@ const PaymentManagement = ({ onDataUpdate }) => {
       };
 
       const response = await axios.post(
-        'http://localhost:8000/hotel/management/payments/',
+        'https://booknest-jhw4.onrender.com/hotel/management/payments/',
         {
           payment_id: selectedPayment.id,
           refund_amount: parseFloat(refundData.refund_amount),

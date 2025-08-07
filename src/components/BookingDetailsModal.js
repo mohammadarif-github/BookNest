@@ -27,7 +27,7 @@ const BookingDetailsModal = ({ bookingId, onClose, onUpdate }) => {
       };
 
       const response = await axios.get(
-        `http://localhost:8000/hotel/booking-detail/${bookingId}/`,
+        `https://booknest-jhw4.onrender.com/hotel/booking-detail/${bookingId}/`,
         config
       );
 
@@ -60,7 +60,7 @@ const BookingDetailsModal = ({ bookingId, onClose, onUpdate }) => {
       };
 
       const response = await axios.post(
-        `http://localhost:8000/hotel/booking-cancel/${bookingId}/`,
+        `https://booknest-jhw4.onrender.com/hotel/booking-cancel/${bookingId}/`,
         { reason: cancellationReason.trim() },
         config
       );

@@ -30,7 +30,7 @@ const PaymentFailure = () => {
       };
 
       const response = await axios.get(
-        `http://localhost:8000/hotel/payment/details/${transactionId}/`,
+        `https://booknest-jhw4.onrender.com/hotel/payment/details/${transactionId}/`,
         config
       );
 
@@ -76,7 +76,7 @@ const PaymentFailure = () => {
       };
 
       const response = await axios.post(
-        'http://localhost:8000/hotel/payment/initiate/',
+        'https://booknest-jhw4.onrender.com/hotel/payment/initiate/',
         retryData,
         config
       );

@@ -29,7 +29,7 @@ const PaymentSuccess = () => {
       };
 
       const response = await axios.get(
-        `http://localhost:8000/hotel/payment/status/?transaction_id=${transactionId}`,
+        `https://booknest-jhw4.onrender.com/hotel/payment/status/?transaction_id=${transactionId}`,
         config
       );
 

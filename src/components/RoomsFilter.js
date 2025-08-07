@@ -55,7 +55,7 @@ export default function RoomsFilter() {
       setDateFilter(prev => ({ ...prev, isFiltering: true }));
 
       const response = await axios.get(
-        `http://localhost:8000/hotel/room-availability/?check_in=${dateFilter.checkIn}&check_out=${dateFilter.checkOut}`
+        `https://booknest-jhw4.onrender.com/hotel/room-availability/?check_in=${dateFilter.checkIn}&check_out=${dateFilter.checkOut}`
       );
 
       if (response.data.success) {

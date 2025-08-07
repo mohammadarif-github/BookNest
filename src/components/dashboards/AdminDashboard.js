@@ -33,7 +33,7 @@ const AdminDashboard = () => {
       };
 
       const response = await axios.get(
-        'http://localhost:8000/hotel/admin/dashboard/',
+        'https://booknest-jhw4.onrender.com/hotel/admin/dashboard/',
         config
       );
 
@@ -59,7 +59,7 @@ const AdminDashboard = () => {
       };
 
       const response = await axios.get(
-        'http://localhost:8000/hotel/management/staff/',
+        'https://booknest-jhw4.onrender.com/hotel/management/staff/',
         config
       );
 
@@ -81,7 +81,7 @@ const AdminDashboard = () => {
       };
 
       const response = await axios.post(
-        'http://localhost:8000/hotel/admin/assign-manager/',
+        'https://booknest-jhw4.onrender.com/hotel/admin/assign-manager/',
         { user_id: staffId },
         config
       );
@@ -115,7 +115,7 @@ const AdminDashboard = () => {
       };
 
       const response = await axios.post(
-        'http://localhost:8000/hotel/admin/remove-manager/',
+        'https://booknest-jhw4.onrender.com/hotel/admin/remove-manager/',
         { user_id: managerId },
         config
       );

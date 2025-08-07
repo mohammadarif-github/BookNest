@@ -162,7 +162,7 @@ if not DEBUG:
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
-    'http://localhost:8000',
+    'https://booknest-jhw4.onrender.com',
     'http://localhost:8002',
     'http://192.168.0.109:3000',
     'http://127.0.0.1:3000',
@@ -181,7 +181,7 @@ CORS_ALLOW_ALL_ORIGINS = DEBUG  # Only allow all origins in development
 if not CORS_ALLOW_ALL_ORIGINS:
     CORS_ALLOWED_ORIGINS = [
         'http://localhost:3000',
-        'http://localhost:8000',
+        'https://booknest-jhw4.onrender.com',
         'http://127.0.0.1:3000',
         'http://127.0.0.1:8000',
         'https://booknest-jhw4.onrender.com',

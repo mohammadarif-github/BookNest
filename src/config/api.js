@@ -9,7 +9,7 @@ axios.defaults.headers.common['Content-Type'] = 'application/json';
 
 const getAPIBaseURL = () => {
   // You can set REACT_APP_API_BASE_URL in your .env file or deployment environment
-  return process.env.REACT_APP_API_BASE_URL || 'http://localhost:8000';
+  return process.env.REACT_APP_API_BASE_URL || 'https://booknest-jhw4.onrender.com';
 };
 
 const getFrontendBaseURL = () => {

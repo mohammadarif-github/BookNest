@@ -26,7 +26,7 @@ const ManagerDashboard = () => {
       };
 
       const response = await axios.get(
-        'http://localhost:8000/hotel/management/dashboard/',
+        'https://booknest-jhw4.onrender.com/hotel/management/dashboard/',
         config
       );
 
